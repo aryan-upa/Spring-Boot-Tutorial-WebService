@@ -28,11 +28,11 @@ public class UserEntity implements Serializable {
 
     @Getter
     @Column(length = 50)
-    private String fName;
+    private String firstName;
 
     @Getter
     @Column(length = 50)
-    private String lName;
+    private String lastName;
 
     @Getter
     @Column(length = 100)
@@ -48,5 +48,5 @@ public class UserEntity implements Serializable {
     @Getter
     @Column(nullable = false)
     private boolean emailVerificationStatus = false;
-    
+
 }

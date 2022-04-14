@@ -19,10 +19,10 @@ public class UserDto implements Serializable {
     private String userId;
 
     @Getter
-    private String fName;
+    private String firstName;
 
     @Getter
-    private String lName;
+    private String lastName;
 
     @Getter
     private String email;

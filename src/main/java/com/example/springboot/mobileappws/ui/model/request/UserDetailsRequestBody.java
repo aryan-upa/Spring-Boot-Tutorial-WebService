@@ -6,8 +6,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserDetailsRequestBody {
-    private String fName;
-    private String lName;
+    private String firstName;
+    private String lastName;
     private String email;
     private String password;
 }
