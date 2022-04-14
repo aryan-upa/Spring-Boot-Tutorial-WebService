@@ -1,6 +1,7 @@
 package com.example.springboot.mobileappws.ui.controller;
 
 import com.example.springboot.mobileappws.ui.model.request.UserDetailsRequestBody;
+import com.example.springboot.mobileappws.ui.model.response.UserRest;
 import org.springframework.web.bind.annotation.*;
 
 @RestController // With this the class is able to receive HttpRequests.
@@ -14,8 +15,8 @@ public class UserController {
     }
 
     @PostMapping // maps to http POST request.
-    public String createUser(@RequestBody UserDetailsRequestBody userDetails) {
-        return "create User was Called";
+    public UserRest createUser(@RequestBody UserDetailsRequestBody userDetails) {
+        return null;
     }
 
     @PutMapping
