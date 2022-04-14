@@ -1,5 +1,6 @@
 package com.example.springboot.mobileappws.shared.dto;
 
+import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serial;
@@ -11,40 +12,28 @@ public class UserDto implements Serializable {
     @Serial
     private static final long serialVersionUID  = 8771218560377097616L;
 
+    @Getter
     private long id;
+
+    @Getter
     private String userId;
+
+    @Getter
     private String fName;
+
+    @Getter
     private String lName;
+
+    @Getter
     private String email;
+
+    @Getter
     private String password;
+
+    @Getter
     private String encryptedPassword;
-    private String emailVerificationStatus;
 
-    public String getUserId() {
-        return userId;
-    }
+    @Getter
+    private boolean emailVerificationStatus;
 
-    public String getFirstName() {
-        return fName;
-    }
-
-    public String getLastName() {
-        return lName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getEncryptedPassword() {
-        return encryptedPassword;
-    }
-
-    public String getEmailVerificationStatus() {
-        return emailVerificationStatus;
-    }
 }
