@@ -1,11 +1,7 @@
 package com.example.springboot.mobileappws.ui.controller;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.springboot.mobileappws.ui.model.request.UserDetailsRequestBody;
+import org.springframework.web.bind.annotation.*;
 
 @RestController // With this the class is able to receive HttpRequests.
 @RequestMapping(path = "users") // http://localhost:8080/users // A controller for getting path in the URLs
@@ -18,7 +14,7 @@ public class UserController {
     }
 
     @PostMapping // maps to http POST request.
-    public String createUser() {
+    public String createUser(@RequestBody UserDetailsRequestBody userDetails) {
         return "create User was Called";
     }
 
