@@ -1,5 +1,8 @@
 package com.example.springboot.mobileappws.Security;
 
+import com.example.springboot.mobileappws.SpringApplicationContext;
+import com.example.springboot.mobileappws.service.UserService;
+import com.example.springboot.mobileappws.shared.dto.UserDto;
 import com.example.springboot.mobileappws.ui.model.request.UserLoginRequestModel;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
@@ -66,7 +69,11 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
                         .signWith(SignatureAlgorithm.HS512, SecurityConstants.TOKEN_SECRET)
                         .compact();
 
+        UserService userService = (UserService) SpringApplicationContext.getBean("userServiceImpl");
+        UserDto userDto = userService.getUser(userName);
+
         response.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
+        response.addHeader("UserID", userDto.getUserId());
     }
 
 }

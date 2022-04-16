@@ -1,4 +1,4 @@
-package com.example.springboot.mobileappws;
+package com.example.springboot.mobileappws.io.repositories;
 
 import com.example.springboot.mobileappws.io.entity.UserEntity;
 import org.apache.catalina.User;

@@ -1,7 +1,6 @@
 package com.example.springboot.mobileappws.service.impl;
 
-import com.example.springboot.mobileappws.MobileAppWsApplication;
-import com.example.springboot.mobileappws.UserRepository;
+import com.example.springboot.mobileappws.io.repositories.UserRepository;
 import com.example.springboot.mobileappws.io.entity.UserEntity;
 import com.example.springboot.mobileappws.service.UserService;
 import com.example.springboot.mobileappws.shared.Utils;
@@ -47,6 +46,17 @@ public class UserServiceImpl implements UserService {
 
         BeanUtils.copyProperties(storedUserEntity, returnValue);
 
+        return returnValue;
+    }
+
+    @Override
+    public UserDto getUser(String email) {
+        UserEntity userEntity = userRepository.findByEmail(email);
+
+        if (userEntity == null) throw new UsernameNotFoundException("Username Unavailable!!");
+
+        UserDto returnValue = new UserDto();
+        BeanUtils.copyProperties(userEntity, returnValue);
         return returnValue;
     }
 
